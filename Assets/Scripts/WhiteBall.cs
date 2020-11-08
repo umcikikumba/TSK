@@ -9,7 +9,7 @@ public class WhiteBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -20,6 +20,11 @@ public class WhiteBall : MonoBehaviour
 
     void ApplyForce (Cue cue)
     {
-        rb.AddForce(transform.forward * cue.force, ForceMode.Impulse);
+        // Gets a vector that points from the player's position to the target's.
+        var heading = this.transform.position - cue.transform.position;
+        var distance = heading.magnitude;
+        var direction = heading / distance; // This is now the normalized direction.
+
+        rb.AddForce(direction * cue.force, ForceMode.Force);
     }
 }
