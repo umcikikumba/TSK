@@ -6,6 +6,7 @@ TagManager:
   tags:
   - white_ball
   - balls
+  - Pocket
   layers:
   - Default
   - TransparentFX
