@@ -25,6 +25,6 @@ public class WhiteBall : MonoBehaviour
         var distance = heading.magnitude;
         var direction = heading / distance; // This is now the normalized direction.
 
-        rb.AddForce(direction *  cue.force, ForceMode.Force);
+        rb.AddForce(direction *  cue.force, ForceMode.Acceleration);
     }
 }
