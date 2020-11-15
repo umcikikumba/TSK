@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cue : MonoBehaviour
 {
-    public float force = 1.0f;
+    public float force ;
     public float speed = 1.0f;
     public Transform whiteBall;
     public Transform startPosition;
@@ -25,6 +25,11 @@ public class Cue : MonoBehaviour
         }
     }
 
+    public void adjustForce(float newForce)
+        {
+            force = newForce;
+        }
+
     void OnCollisionEnter (Collision collision)
     {
         if (collision.gameObject.tag == "white_ball")         //"Balls" layer
@@ -32,4 +37,6 @@ public class Cue : MonoBehaviour
             collision.gameObject.SendMessage("ApplyForce", this);
         }
     }
+
+    
 }
