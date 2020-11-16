@@ -64,6 +64,10 @@ public class Cue : MonoBehaviour
         {
             collision.gameObject.SendMessage("ApplyForce", this);
         }
+        if (collision.gameObject.tag == "balls")
+        {
+            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+        }
     }
 
     
