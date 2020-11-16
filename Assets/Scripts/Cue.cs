@@ -29,13 +29,15 @@ public class Cue : MonoBehaviour
         {
             Vector3 v3Pos = Camera.main.WorldToScreenPoint(whiteBall.transform.position);
             v3Pos = Input.mousePosition - v3Pos;
-            float angle = Mathf.Atan2(v3Pos.y, v3Pos.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(v3Pos.z, v3Pos.x) * Mathf.Rad2Deg;
             v3Pos = Quaternion.AngleAxis(angle, Vector3.up) * (Vector3.right * radius);
             transform.position = whiteBall.transform.position + v3Pos;
-            Vector3 targetPostition = new Vector3(whiteBall.transform.position.x,
+            Vector3 targetPosition = new Vector3(whiteBall.transform.position.x,
                                             this.transform.position.y,
                                             whiteBall.transform.position.z);
-            this.transform.LookAt(targetPostition);
+            this.transform.LookAt(targetPosition);
+            transform.Rotate(5.0f, 0.0f, 0.0f);
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z);
         }
 
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
