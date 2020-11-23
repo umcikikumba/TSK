@@ -345,6 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &39637154
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +606,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &106951167
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &229814176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -1013,6 +1022,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &250338094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &412533288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +2004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &589508963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -2049,6 +2067,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &616533809 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -2109,6 +2130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &617243289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -2169,6 +2193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &619375682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,6 +2619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &737196955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,6 +2784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1001 &757594355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4602,6 +4635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29532d034c977824fa0d3fceacc7178c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 355102302}
+  static_friction: {fileID: 1019329185}
+  dynamic_friction: {fileID: 737196957}
 --- !u!65 &1221723268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4843,6 +4879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &1319377120
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,6 +6008,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &1613546935
 GameObject:
   m_ObjectHideFlags: 0
@@ -6193,6 +6235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1001 &1673171360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6599,6 +6644,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &1859233523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6847,6 +6895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdffa11ff717e944ae4a8017d6da0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounce: {fileID: 872609182}
+  static_friction: {fileID: 1319377122}
+  dynamic_friction: {fileID: 106951169}
 --- !u!1 &1958262866
 GameObject:
   m_ObjectHideFlags: 0
