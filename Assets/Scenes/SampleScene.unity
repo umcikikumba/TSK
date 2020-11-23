@@ -312,9 +312,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29114451}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -433,9 +433,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 984918308}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 200
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 120
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -558,9 +558,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86927741}
   serializedVersion: 2
-  m_Mass: 0.2
-  m_Drag: 0.5
-  m_AngularDrag: 0.05
+  m_Mass: 0.26
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -619,6 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106951168}
   - component: {fileID: 106951169}
+  - component: {fileID: 106951170}
   m_Layer: 5
   m_Name: WhiteBall_Dynamic_Friction
   m_TagString: Untagged
@@ -711,6 +712,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &106951170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106951167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6317d7dc3ef641afd03eb7eebfa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1809967573}
+  bounciness: 0
+  staticFriction: 0
+  dynamicFriction: 1
 --- !u!1001 &108443565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,9 +943,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227305336}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -989,9 +1006,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229814176}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1390,6 +1407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355102301}
   - component: {fileID: 355102302}
+  - component: {fileID: 355102303}
   m_Layer: 5
   m_Name: Table_Bounciness
   m_TagString: Untagged
@@ -1473,7 +1491,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221723267}
         m_MethodName: AdjustBounciness
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1482,6 +1500,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &355102303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355102300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6317d7dc3ef641afd03eb7eebfa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1221723257}
+  bounciness: 1
+  staticFriction: 0
+  dynamicFriction: 0
 --- !u!1 &387662284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,9 +1679,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403565447}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1971,9 +2005,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588591901}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2034,9 +2068,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589508963}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2097,9 +2131,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616533809}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2160,9 +2194,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617243289}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2586,9 +2620,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734458357}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2632,6 +2666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737196956}
   - component: {fileID: 737196957}
+  - component: {fileID: 737196958}
   m_Layer: 5
   m_Name: Table_Dynamic_Friction
   m_TagString: Untagged
@@ -2724,6 +2759,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &737196958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737196955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6317d7dc3ef641afd03eb7eebfa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1221723257}
+  bounciness: 0
+  staticFriction: 0
+  dynamicFriction: 1
 --- !u!1 &740647766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -2751,9 +2802,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740647766}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3191,6 +3242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 872609181}
   - component: {fileID: 872609182}
+  - component: {fileID: 872609183}
   m_Layer: 5
   m_Name: WhiteBall_Bounciness
   m_TagString: Untagged
@@ -3283,6 +3335,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &872609183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872609180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6317d7dc3ef641afd03eb7eebfa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1809967573}
+  bounciness: 1
+  staticFriction: 0
+  dynamicFriction: 0
 --- !u!1001 &893966815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3855,6 +3923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019329184}
   - component: {fileID: 1019329185}
+  - component: {fileID: 1019329186}
   m_Layer: 5
   m_Name: Table_Static_Friction
   m_TagString: Untagged
@@ -3938,7 +4007,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221723267}
         m_MethodName: AdjustStaticFriction
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3947,6 +4016,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1019329186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019329183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6317d7dc3ef641afd03eb7eebfa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1221723257}
+  bounciness: 0
+  staticFriction: 1
+  dynamicFriction: 0
 --- !u!1 &1033926033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,9 +4931,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319119335}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4892,6 +4977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1319377121}
   - component: {fileID: 1319377122}
+  - component: {fileID: 1319377123}
   m_Layer: 5
   m_Name: WhiteBall_Static_Friction
   m_TagString: Untagged
@@ -4975,7 +5061,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1809967579}
         m_MethodName: AdjustStaticFriction
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4984,6 +5070,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1319377123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319377120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6317d7dc3ef641afd03eb7eebfa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 1809967573}
+  bounciness: 0
+  staticFriction: 1
+  dynamicFriction: 0
 --- !u!1001 &1379532557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5975,9 +6077,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606039277}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -6202,9 +6304,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672808204}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -6611,9 +6713,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809967573}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -6862,9 +6964,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906772850}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.15
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -7093,7 +7195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db8aaf84bda7a24694edea509f8e0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 100
+  force: 175
   speed: 1
   radius: 2
   whiteBall: {fileID: 86927746}
