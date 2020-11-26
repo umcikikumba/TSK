@@ -31,7 +31,9 @@ public class WhiteBall : MonoBehaviour
         var distance = heading.magnitude;
         var direction = heading / distance; // This is now the normalized direction.
 
-        rb.AddForce(direction *  cue.force, ForceMode.Force);
+
+        //rb.AddTorque(Vector3.down * cue.force);
+        rb.AddForceAtPosition(direction *  cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
     }
 
     private void OnTriggerEnter(Collider collision)
