@@ -7206,6 +7206,7 @@ MonoBehaviour:
   whiteBall: {fileID: 86927746}
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
+  rotateStep: 0
 --- !u!54 &2016597026
 Rigidbody:
   m_ObjectHideFlags: 0
