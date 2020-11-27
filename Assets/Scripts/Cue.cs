@@ -13,8 +13,7 @@ public class Cue : MonoBehaviour
     public Quaternion startRot;
     private bool isShooting;
     //private bool hasShot;
-    float horizontal = 0.0f;
-    float vertical = 0.0f;
+    public float rotateStep = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -43,32 +42,57 @@ public class Cue : MonoBehaviour
                 transform.RotateAround(targetPos, Vector3.up, 10.0f * Time.deltaTime);
             }
 
-            //vertical_x -> 2.9-5.7
+            //vertical_x -> 0,01 - 0,036
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                Debug.Log("U");
-                vertical -= 1.0f * Time.deltaTime;
-                transform.Rotate(vertical, 0.0f, 0.0f);  
+                Debug.Log("rotx: " + this.transform.rotation.x);
+                if (this.transform.rotation.x > 0.007f && this.transform.rotation.x < 0.042f)
+                {
+                    rotateStep = -5.0f * Time.deltaTime;
+                    transform.Rotate(rotateStep, 0.0f, 0.0f);
+                }
+                else
+                {
+                    rotateStep = 0.0f;
+                }
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                Debug.Log("D");
-                vertical += 1.0f * Time.deltaTime;
-                transform.Rotate(vertical, 0.0f, 0.0f);
+                Debug.Log("rotx: " + this.transform.rotation.x);
+                if (this.transform.rotation.x > 0.005f && this.transform.rotation.x < 0.039f)
+                {
+                    rotateStep = 5.0f * Time.deltaTime;
+                    transform.Rotate(rotateStep, 0.0f, 0.0f);
+                }
+                else
+                {
+                    rotateStep = 0.0f;
+                }
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                Debug.Log("L");
-                horizontal += 1.0f * Time.deltaTime;
-                transform.Rotate(0.0f, horizontal, 0.0f);
+                if (this.transform.rotation.y > -0.73f && this.transform.rotation.y < -0.68f)
+                {
+                    rotateStep = -5.0f * Time.deltaTime;
+                    transform.Rotate(0.0f, rotateStep, 0.0f);
+                }
+                else
+                {
+                    rotateStep = 0.0f;
+                }
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                Debug.Log("R");
-                horizontal -= 1.0f * Time.deltaTime;
-                transform.Rotate(0.0f, horizontal, 0.0f);
+                if (this.transform.rotation.y > -0.74f && this.transform.rotation.y < -0.69f)
+                {
+                    rotateStep = 5.0f * Time.deltaTime;
+                    transform.Rotate(0.0f, rotateStep, 0.0f);
+                }
+                else
+                {
+                    rotateStep = 0.0f;
+                }
             }
-
         }
 
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
