@@ -3562,7 +3562,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 7.4551415
+  field of view: 12.513878
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3587,14 +3587,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.043167815, y: -0.7057879, z: 0.043167815, w: 0.7057879}
-  m_LocalPosition: {x: 10, y: 2, z: 0}
+  m_LocalRotation: {x: 0.03700707, y: -0.7061378, z: 0.03700707, w: 0.7061378}
+  m_LocalPosition: {x: 13, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1075604481}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 7, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 6, y: -90, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3607,7 +3607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666c212a7f99fd54ab6d8fdd9182380d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2016597023}
+  target: {fileID: 1379532558}
+  cue: {fileID: 2016597023}
   movementSpeed: 0.1
 --- !u!1001 &965804665
 PrefabInstance:
@@ -7203,7 +7204,8 @@ MonoBehaviour:
   speed: 1
   radius: 2
   whiteBall: {fileID: 86927746}
-  startPosition: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
+  startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &2016597026
 Rigidbody:
   m_ObjectHideFlags: 0
