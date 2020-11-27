@@ -9,17 +9,21 @@ public class Cue : MonoBehaviour
     public float speed = 1.0f;
     public float radius = 2.0f;
     public WhiteBall whiteBall;
-    public Transform startPosition;
+    public Vector3 startPos;
+    public Quaternion startRot;
     private bool isShooting;
     //private bool hasShot;
+    float horizontal = 0.0f;
+    float vertical = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = this.transform;
+        //startPosition = this.transform;
         isShooting = false;
         whiteBall.transform.hasChanged = false;
-        //startPosition.position = this.transform.position - whiteBall.position;
+        startPos = this.transform.position;
+        startRot = this.transform.rotation;
     }
 
     // Update is called once per frame
@@ -27,17 +31,44 @@ public class Cue : MonoBehaviour
     {
         if (isShooting == false)
         {
-            Vector3 v3Pos = Camera.main.WorldToScreenPoint(whiteBall.transform.position);
-            v3Pos = Input.mousePosition - v3Pos;
-            float angle = Mathf.Atan2(v3Pos.z, v3Pos.x) * Mathf.Rad2Deg;
-            v3Pos = Quaternion.AngleAxis(angle, Vector3.up) * (Vector3.right * radius);
-            transform.position = whiteBall.transform.position + v3Pos;
-            Vector3 targetPosition = new Vector3(whiteBall.transform.position.x,
-                                            this.transform.position.y,
-                                            whiteBall.transform.position.z);
-            this.transform.LookAt(targetPosition);
-            transform.Rotate(5.0f, 0.0f, 0.0f);
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z);
+            Vector3 targetPos = new Vector3(whiteBall.transform.position.x, whiteBall.transform.position.y + 0.2f, whiteBall.transform.position.z);
+            if (Input.GetKey(KeyCode.A))
+            {
+                Debug.Log("siemaA");
+                transform.RotateAround(targetPos, Vector3.up, -10.0f * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                Debug.Log("siemaD");
+                transform.RotateAround(targetPos, Vector3.up, 10.0f * Time.deltaTime);
+            }
+
+            //vertical_x -> 2.9-5.7
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                Debug.Log("U");
+                vertical -= 1.0f * Time.deltaTime;
+                transform.Rotate(vertical, 0.0f, 0.0f);  
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                Debug.Log("D");
+                vertical += 1.0f * Time.deltaTime;
+                transform.Rotate(vertical, 0.0f, 0.0f);
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                Debug.Log("L");
+                horizontal += 1.0f * Time.deltaTime;
+                transform.Rotate(0.0f, horizontal, 0.0f);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                Debug.Log("R");
+                horizontal -= 1.0f * Time.deltaTime;
+                transform.Rotate(0.0f, horizontal, 0.0f);
+            }
+
         }
 
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
@@ -52,6 +83,13 @@ public class Cue : MonoBehaviour
             isShooting = false;
             whiteBall.collidedWithPocket = false;
             whiteBall.transform.hasChanged = false;
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            transform.position = startPos;
+            transform.rotation = startRot;
+            Debug.Log("resetuje kija");
         }
     }
 
@@ -70,7 +108,10 @@ public class Cue : MonoBehaviour
         {
             Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
         }
-    }
+    }    
 
-    
+    public void UpdateCuePosition()
+    {
+
+    }
 }
