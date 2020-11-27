@@ -33,7 +33,8 @@ public class WhiteBall : MonoBehaviour
 
 
         //rb.AddTorque(Vector3.down * cue.force);
-        rb.AddForceAtPosition(direction *  cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
+        rb.AddForceAtPosition(direction * cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
+        //rb.AddForceAtPosition(cue.transform.forward *  cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
     }
 
     private void OnTriggerEnter(Collider collision)
