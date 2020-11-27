@@ -15,6 +15,14 @@ public class Cue : MonoBehaviour
     public float rotateStep = 0.0f;
     public Camera cam;
     public float speedRotation = 30.0f;
+    private float u1;
+    private float u2;
+    private float d1;
+    private float d2;
+    private float l1;
+    private float l2;
+    private float r1;
+    private float r2;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +32,14 @@ public class Cue : MonoBehaviour
         whiteBall.transform.hasChanged = false;
         startPos = this.transform.position;
         startRot = this.transform.rotation;
+        u1 = 0.0f;
+        u2 = 0.0f;
+        d1 = 0.0f;
+        d2 = 0.0f;
+        l1 = 0.0f;
+        l2 = 0.0f;
+        r1 = 0.0f;
+        r2 = 0.0f;
     }
 
     // Update is called once per frame
@@ -31,19 +47,23 @@ public class Cue : MonoBehaviour
     {
         if (isShooting == false)
         {
+            //Debug.Log("rot x: " + this.transform.rotation.x);
+            //Debug.Log("rot y: " + this.transform.rotation.y);
             Vector3 targetPos = new Vector3(whiteBall.transform.position.x, whiteBall.transform.position.y + 0.2f, whiteBall.transform.position.z);
             if (Input.GetKey(KeyCode.A))
             {
                 transform.RotateAround(targetPos, Vector3.up, -speedRotation * Time.deltaTime);
+                UpdateCueRotation();
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 transform.RotateAround(targetPos, Vector3.up, speedRotation * Time.deltaTime);
+                UpdateCueRotation();
             }
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            else if (Input.GetKey(KeyCode.UpArrow))
             {
-                if (this.transform.rotation.x > 0.025f && this.transform.rotation.x < 0.042f)
+                if (this.transform.rotation.x > u1 && this.transform.rotation.x < u2)
                 {
                     rotateStep = -5.0f * Time.deltaTime;
                     transform.Rotate(rotateStep, 0.0f, 0.0f);
@@ -53,9 +73,9 @@ public class Cue : MonoBehaviour
                     rotateStep = 0.0f;
                 }
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
-                if (this.transform.rotation.x > 0.023f && this.transform.rotation.x < 0.039f)
+                if (this.transform.rotation.x > d1 && this.transform.rotation.x < d2)
                 {
                     rotateStep = 5.0f * Time.deltaTime;
                     transform.Rotate(rotateStep, 0.0f, 0.0f);
@@ -65,10 +85,10 @@ public class Cue : MonoBehaviour
                     rotateStep = 0.0f;
                 }
             }
-            if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Debug.Log(transform.rotation.y);
-                if (this.transform.rotation.y > -0.72f && this.transform.rotation.y < -0.68f)
+                if (this.transform.rotation.y > l1 && this.transform.rotation.y < l2)
                 {
                     rotateStep = -5.0f * Time.deltaTime;
                     transform.Rotate(0.0f, rotateStep, 0.0f);
@@ -78,9 +98,9 @@ public class Cue : MonoBehaviour
                     rotateStep = 0.0f;
                 }
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
-                if (this.transform.rotation.y > -0.73f && this.transform.rotation.y < -0.69f)
+                if (this.transform.rotation.y > r1 && this.transform.rotation.y < r2)
                 {
                     rotateStep = 5.0f * Time.deltaTime;
                     transform.Rotate(0.0f, rotateStep, 0.0f);
@@ -105,6 +125,7 @@ public class Cue : MonoBehaviour
             whiteBall.collidedWithPocket = false;
             whiteBall.transform.hasChanged = false;
             UpdateCuePosition();
+            UpdateCueRotation();
         }
 
         if (Input.GetKey(KeyCode.R))
@@ -140,5 +161,17 @@ public class Cue : MonoBehaviour
 
         //lookat
         this.transform.LookAt(whiteBall.transform);
+    }
+
+    public void UpdateCueRotation()
+    {
+        u1 = this.transform.rotation.x - 0.02f;
+        u2 = this.transform.rotation.x + 0.02f;
+        d1 = this.transform.rotation.x - 0.022f;
+        d2 = this.transform.rotation.x + 0.018f;
+        l1 = this.transform.rotation.y - 0.022f;
+        l2 = this.transform.rotation.y + 0.022f;
+        r1 = this.transform.rotation.y - 0.024f;
+        r2 = this.transform.rotation.y + 0.020f;
     }
 }
