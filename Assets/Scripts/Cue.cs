@@ -43,7 +43,7 @@ public class Cue : MonoBehaviour
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                if (this.transform.rotation.x > 0.007f && this.transform.rotation.x < 0.042f)
+                if (this.transform.rotation.x > 0.025f && this.transform.rotation.x < 0.042f)
                 {
                     rotateStep = -5.0f * Time.deltaTime;
                     transform.Rotate(rotateStep, 0.0f, 0.0f);
@@ -55,7 +55,7 @@ public class Cue : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                if (this.transform.rotation.x > 0.005f && this.transform.rotation.x < 0.039f)
+                if (this.transform.rotation.x > 0.023f && this.transform.rotation.x < 0.039f)
                 {
                     rotateStep = 5.0f * Time.deltaTime;
                     transform.Rotate(rotateStep, 0.0f, 0.0f);
@@ -67,7 +67,8 @@ public class Cue : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                if (this.transform.rotation.y > -0.73f && this.transform.rotation.y < -0.68f)
+                Debug.Log(transform.rotation.y);
+                if (this.transform.rotation.y > -0.72f && this.transform.rotation.y < -0.68f)
                 {
                     rotateStep = -5.0f * Time.deltaTime;
                     transform.Rotate(0.0f, rotateStep, 0.0f);
@@ -79,7 +80,7 @@ public class Cue : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                if (this.transform.rotation.y > -0.74f && this.transform.rotation.y < -0.69f)
+                if (this.transform.rotation.y > -0.73f && this.transform.rotation.y < -0.69f)
                 {
                     rotateStep = 5.0f * Time.deltaTime;
                     transform.Rotate(0.0f, rotateStep, 0.0f);
