@@ -9,6 +9,7 @@ public class WhiteBall : MonoBehaviour
     public float velocity;
     private Vector3 startPosition;
     public bool collidedWithPocket;
+    public Cue cue;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +33,23 @@ public class WhiteBall : MonoBehaviour
         var direction = heading / distance; // This is now the normalized direction.
 
 
-        //rb.AddTorque(Vector3.down * cue.force);
-        rb.AddForceAtPosition(direction * cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
+        rb.AddTorque(Vector3.forward * cue.force * 10);
+        //rb.velocity.Set(cue.force / rb.mass, cue.force / rb.mass, cue.force / rb.mass);
+        rb.AddForceAtPosition(cue.transform.forward * cue.force,this.transform.position, ForceMode.Impulse);
+        //rb.AddForceAtPosition(cue.transform.forward * cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
         //rb.AddForceAtPosition(cue.transform.forward *  cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Cue cue;
+
+        if (collision.gameObject.CompareTag("balls"))
+        {
+            rb.AddForceAtPosition( cue.transform.forward * 1, this.transform.position, ForceMode.Impulse);
+        }
+    }
+
 
     private void OnTriggerEnter(Collider collision)
     {
