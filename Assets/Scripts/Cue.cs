@@ -12,6 +12,7 @@ public class Cue : MonoBehaviour
     public Vector3 startPos;
     public Quaternion startRot;
     private bool isShooting;
+    public bool reverse, front;
     public float rotateStep = 0.0f;
     public Camera cam;
     public float speedRotation = 30.0f;
@@ -29,6 +30,8 @@ public class Cue : MonoBehaviour
     {
         //startPosition = this.transform;
         isShooting = false;
+        reverse = false;
+        front = false;
         whiteBall.transform.hasChanged = false;
         startPos = this.transform.position;
         startRot = this.transform.rotation;
@@ -67,6 +70,8 @@ public class Cue : MonoBehaviour
                 {
                     rotateStep = -5.0f * Time.deltaTime;
                     transform.Rotate(rotateStep, 0.0f, 0.0f);
+                    front = true;
+                    reverse = false;
                 }
                 else
                 {
@@ -79,6 +84,8 @@ public class Cue : MonoBehaviour
                 {
                     rotateStep = 5.0f * Time.deltaTime;
                     transform.Rotate(rotateStep, 0.0f, 0.0f);
+                    reverse = true;
+                    front = false;
                 }
                 else
                 {

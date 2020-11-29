@@ -8,7 +8,7 @@ public class WhiteBall : MonoBehaviour
     public Rigidbody rb;
     public float velocity;
     private Vector3 startPosition;
-    public bool collidedWithPocket;
+    public bool collidedWithPocket, firstCollison;
     public Cue cue;
 
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class WhiteBall : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startPosition = this.transform.position;
         collidedWithPocket = false;
+        firstCollison = false;
     }
 
     // Update is called once per frame
@@ -42,11 +43,22 @@ public class WhiteBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Cue cue;
-
         if (collision.gameObject.CompareTag("balls"))
         {
-            rb.AddForceAtPosition( cue.transform.forward * 1, this.transform.position, ForceMode.Impulse);
+            if (!firstCollison)
+            {
+                if (cue.reverse)
+                {
+                    rb.AddForceAtPosition(-cue.transform.forward * 1, this.transform.position, ForceMode.Impulse);
+                    firstCollison = true;
+                }
+                if (cue.front)
+                {
+                    rb.AddForceAtPosition(cue.transform.forward * 1, this.transform.position, ForceMode.Impulse);
+                    firstCollison = true;
+                }
+            }
+
         }
     }
 
