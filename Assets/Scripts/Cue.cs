@@ -131,6 +131,7 @@ public class Cue : MonoBehaviour
             isShooting = false;
             whiteBall.collidedWithPocket = false;
             whiteBall.transform.hasChanged = false;
+           // whiteBall.firstCollison = false;
             UpdateCuePosition();
             UpdateCueRotation();
         }
@@ -166,6 +167,7 @@ public class Cue : MonoBehaviour
         this.transform.position = newWhiteBallPos;
         transform.Rotate(5.0f, 0.0f, 0.0f);
 
+        whiteBall.firstCollison = false;
         //lookat
         this.transform.LookAt(whiteBall.transform);
     }
