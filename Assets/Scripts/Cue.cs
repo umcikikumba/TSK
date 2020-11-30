@@ -24,6 +24,7 @@ public class Cue : MonoBehaviour
     private float l2;
     private float r1;
     private float r2;
+    public BoxCollider boxCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -121,6 +122,7 @@ public class Cue : MonoBehaviour
 
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
+            boxCollider.isTrigger = false;
             float step = speedCueStrike * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, whiteBall.transform.position, step);
             isShooting = true;
@@ -135,6 +137,7 @@ public class Cue : MonoBehaviour
             UpdateCuePosition();
             UpdateCueRotation();
         }
+        
 
         if (Input.GetKey(KeyCode.R))
         {
@@ -153,6 +156,7 @@ public class Cue : MonoBehaviour
         if (collision.gameObject.tag == "white_ball")         //"Balls" layer
         {
             collision.gameObject.SendMessage("ApplyForce", this);
+            boxCollider.isTrigger = true;
         }
         if (collision.gameObject.tag == "balls")
         {
