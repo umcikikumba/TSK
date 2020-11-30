@@ -433,7 +433,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 984918308}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 10
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
@@ -1045,8 +1045,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21117926, y: 0.25314307, z: 0.120168686}
-  m_Center: {x: 0.61054087, y: 0.27881062, z: -0.6102812}
+  m_Size: {x: 0.18126726, y: 0.25314307, z: 0.19125569}
+  m_Center: {x: 0.6138644, y: 0.27881062, z: -0.5597817}
 --- !u!1 &279462940
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,8 +7389,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22360837, y: 0.25314307, z: 0.120168686}
-  m_Center: {x: 0.6167554, y: 0.27881062, z: -0.6102812}
+  m_Size: {x: 0.18218541, y: 0.25314307, z: 0.18669677}
+  m_Center: {x: 0.6136173, y: 0.27881062, z: -0.65986335}
 --- !u!1 &2109656102
 GameObject:
   m_ObjectHideFlags: 0
