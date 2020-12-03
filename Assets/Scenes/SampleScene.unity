@@ -556,7 +556,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 523452029258801181}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1043230227}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dc24f9217b1c145b16c59e42ab727d, type: 3}
@@ -3398,6 +3398,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &918442463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918442465}
+  - component: {fileID: 918442464}
+  m_Layer: 0
+  m_Name: ShotPrediction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &918442464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918442463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c545686f28836448fcd7b5d27edfa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteBall: {fileID: 1043230227}
+  cue: {fileID: 2016597025}
+  table: {fileID: 1221723257}
+  ball: {fileID: 1307015054}
+  balls:
+  - {fileID: 1307015054}
+  - {fileID: 1606039277}
+  - {fileID: 588591901}
+  - {fileID: 229814176}
+  - {fileID: 734458357}
+  - {fileID: 1672808204}
+  - {fileID: 589508963}
+  - {fileID: 227305336}
+  - {fileID: 1319119335}
+  - {fileID: 740647766}
+  - {fileID: 616533809}
+  - {fileID: 403565447}
+  - {fileID: 1906772850}
+  - {fileID: 29114451}
+  - {fileID: 617243289}
+--- !u!4 &918442465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918442463}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960356577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,6 +4160,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
     type: 3}
   m_PrefabInstance: {fileID: 1036423454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1043230227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 523452028485491120, guid: a747b50ff9400ea4cb1b991354518c50,
+    type: 3}
+  m_PrefabInstance: {fileID: 523452029258801181}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1065801171
 PrefabInstance:
