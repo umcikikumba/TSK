@@ -25,6 +25,8 @@ public class Cue : MonoBehaviour
     private float r1;
     private float r2;
     public BoxCollider boxCollider;
+    private GameObject[] balls;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,8 @@ public class Cue : MonoBehaviour
         l2 = 0.0f;
         r1 = 0.0f;
         r2 = 0.0f;
+
+        balls = GameObject.FindGameObjectsWithTag("balls");
     }
 
     // Update is called once per frame
@@ -137,12 +141,22 @@ public class Cue : MonoBehaviour
             UpdateCuePosition();
             UpdateCueRotation();
         }
-        
+
 
         if (Input.GetKey(KeyCode.R))
         {
             transform.position = startPos;
             transform.rotation = startRot;
+
+            for (int i = 0; i < 15; i++)
+            {
+                balls[i].SetActive(true);
+                balls[i].GetComponent<Collider>().isTrigger = false;
+                //balls[i].transform.position = startPos;
+                //balls[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                //balls[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            }
+        
         }
     }
 

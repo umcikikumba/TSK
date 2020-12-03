@@ -24,10 +24,13 @@ public class Balls : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            //gameObject.SetActive(true);
+            //gameObject.GetComponent<Collider>().isTrigger = false;
             gameObject.transform.position = startPos;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
+        
     }
 
     public void AdjustBounciness(float newBounciness)

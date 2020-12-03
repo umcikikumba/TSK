@@ -16,8 +16,9 @@ public class Socket : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pocket"))
         {
-
-            Object.Destroy(ball);
+            ball.SetActive(false);
+            ball.GetComponent<Collider>().isTrigger = true;
+            //Object.Destroy(ball);
         }
     }
 }
