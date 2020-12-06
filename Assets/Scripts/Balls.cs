@@ -8,7 +8,8 @@ public class Balls : MonoBehaviour
     public Slider bounce;
     public Slider static_friction;
     public Slider dynamic_friction;
-    private Vector3 startPos;
+    public Vector3 startPos;
+    //public bool clone = false;
 
     // Start is called before the first frame update
     void Start()

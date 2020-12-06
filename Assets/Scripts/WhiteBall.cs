@@ -70,20 +70,28 @@ public class WhiteBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Pocket") && clone == false)
+        if (collision.gameObject.CompareTag("Pocket"))
         {
-            Debug.Log("White ball has entered the pocket.");
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            collidedWithPocket = true;
-            this.transform.position = startPosition;
-
-            if(clone == true)
+            if(clone == false)
+            {
+                Debug.Log("White ball has entered the pocket.");
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                collidedWithPocket = true;
+                this.transform.position = startPosition;
+            }
+            else if (clone == true)
             {
                 //stop drawing motherfucker
+                Debug.Log("Clone ball has entered the pocket.");
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                collidedWithPocket = true;
+                Vector3 newStartPos = startPosition;
+                newStartPos.y -= 1.0f;
+                this.transform.position = newStartPos;
+                //this.transform.position = startPosition;
             }
         }
     }
-
-    
 }

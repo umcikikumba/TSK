@@ -53,6 +53,7 @@ public class Cue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("cue transform forward: " + transform.forward);
         if (isShooting == false)
         {
             //Debug.Log("rot x: " + this.transform.rotation.x);
@@ -152,9 +153,6 @@ public class Cue : MonoBehaviour
             {
                 balls[i].SetActive(true);
                 balls[i].GetComponent<Collider>().isTrigger = false;
-                //balls[i].transform.position = startPos;
-                //balls[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
-                //balls[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             }
         
         }

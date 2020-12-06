@@ -348,6 +348,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &39637154
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +941,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &229814176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -1003,6 +1005,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &250338094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1695,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &412533288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2022,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &589508963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -2081,6 +2086,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &616533809 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -2144,6 +2150,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &617243289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -2207,6 +2214,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &619375682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,6 +2643,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &737196955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2826,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &757594355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3429,25 +3439,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteBall: {fileID: 1043230227}
-  cue: {fileID: 2016597025}
+  cue: {fileID: 1750777607}
   table: {fileID: 1221723257}
   ball: {fileID: 1307015054}
-  ballsPos:
-  - {fileID: 1306586030}
-  - {fileID: 1015431461}
-  - {fileID: 281312738}
-  - {fileID: 1673171361}
-  - {fileID: 1695374415}
-  - {fileID: 1427020255}
-  - {fileID: 108443566}
-  - {fileID: 757594356}
-  - {fileID: 1036423455}
-  - {fileID: 715803386}
-  - {fileID: 965804666}
-  - {fileID: 1388477226}
-  - {fileID: 769146221}
-  - {fileID: 284769067}
-  - {fileID: 1575289954}
+  balls:
+  - {fileID: 1307015054}
+  - {fileID: 1606039277}
+  - {fileID: 588591901}
+  - {fileID: 229814176}
+  - {fileID: 734458357}
+  - {fileID: 1672808204}
+  - {fileID: 589508963}
+  - {fileID: 227305336}
+  - {fileID: 1319119335}
+  - {fileID: 740647766}
+  - {fileID: 616533809}
+  - {fileID: 403565447}
+  - {fileID: 1906772850}
+  - {fileID: 29114451}
+  - {fileID: 617243289}
   pockets:
   - {fileID: 1384127486}
   - {fileID: 389853935}
@@ -5021,6 +5031,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1319377120
 GameObject:
   m_ObjectHideFlags: 0
@@ -6196,6 +6207,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1613546935
 GameObject:
   m_ObjectHideFlags: 0
@@ -6423,6 +6435,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1673171360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6675,6 +6688,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
     type: 3}
   m_PrefabInstance: {fileID: 1695374414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1750777607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6442876013553866267, guid: 66e3dbf7cb8f63b4ab028d0466d30bbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6442876012660918628}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1762877189 stripped
 Transform:
@@ -7054,6 +7073,7 @@ MonoBehaviour:
   bounce: {fileID: 872609182}
   static_friction: {fileID: 1319377122}
   dynamic_friction: {fileID: 106951169}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1958262866
 GameObject:
   m_ObjectHideFlags: 0
@@ -7224,7 +7244,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6442876012660918628}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1750777607}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3db8aaf84bda7a24694edea509f8e0c9, type: 3}

@@ -10,8 +10,6 @@ public class ShotPrediction : MonoBehaviour
     //-> ogarniecie poprawnej sily aplikowanej do symulowanej bialej bili,
     //   cue.transform.forward musi byc dla kija blisko bili prawdopodobnie,
     //   jednoczesnie musi to byc z bomby a nie po wcisnieciu LPM
-    //-> przerwa w rysowaniu linerenderera, gdy wpada do pocketu,
-    //   jakos trzeba zmienic polozenie i-tych el. markerPos, ktore sa po kolizji z pocketem 
 
     private Scene sceneMain;
     private Scene scenePrediction;
@@ -19,7 +17,7 @@ public class ShotPrediction : MonoBehaviour
     private PhysicsScene scenePredictionPhysics;
 
     public GameObject whiteBall;
-    public Cue cue;
+    public GameObject cue;
     private int steps = 200;
     public GameObject table;
 
@@ -28,12 +26,11 @@ public class ShotPrediction : MonoBehaviour
 
     public GameObject ball;
     private GameObject[] ballsPredicted;
-    public Transform[] ballsPos;
+    public GameObject[] balls;
     private LineRenderer lineRenderer;
 
     public GameObject[] pockets;
-
-    //private GameObject predictionBall;
+    //private GameObject predictionCue;
 
     // Start is called before the first frame update
     void Start()
@@ -65,14 +62,16 @@ public class ShotPrediction : MonoBehaviour
         for (int i = 0; i < 15; i++)
         {
             ballsPredicted[i] = Instantiate(ball);
-            ballsPredicted[i].transform.position = ballsPos[i].position;
+            ballsPredicted[i].transform.position = balls[i].transform.position;
             Destroy(ballsPredicted[i].GetComponent<MeshRenderer>());
             SceneManager.MoveGameObjectToScene(ballsPredicted[i], scenePrediction);
+            ballsPredicted[i].SetActive(true);
         }
 
         GetMarkersPos();
         lineRenderer = GetComponent<LineRenderer>();
         SetupLineRenderer(lineRenderer);
+        UpdateBallsPositions();
         DrawLine();
     }
 
@@ -88,13 +87,14 @@ public class ShotPrediction : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||
-            Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetMouseButton(0))
+            Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.R)) // || Input.GetMouseButton(0))
         {
+            //UpdateBallsPositions();
             GetMarkersPos();
             DrawLine();
         }
         //DrawLine();
-        UpdateBallsPositions();
+        //UpdateBallsPositions();
     }
 
     private void GetMarkersPos()
@@ -102,13 +102,16 @@ public class ShotPrediction : MonoBehaviour
         if (sceneMainPhysics.IsValid() == false || scenePredictionPhysics.IsValid() == false)
             return;
 
+        UpdateBallsPositions();
+
         GameObject predictionBall = Instantiate(whiteBall);
         predictionBall.GetComponent<WhiteBall>().clone = true;
         SceneManager.MoveGameObjectToScene(predictionBall, scenePrediction);
         predictionBall.transform.position = whiteBall.transform.position;
 
-        //cue.transform.forward sie zmienia wraz z przyblizeniem kija do bili, jak to sprawdzic?
-        predictionBall.GetComponent<Rigidbody>().AddForceAtPosition(cue.transform.forward * cue.force, 
+        //cue.transform.forward nie wplywa, wektor nie zmienia sie przyblizajac do bialej bili
+        //-> cos innego jest przyczyna, co?
+        predictionBall.GetComponent<Rigidbody>().AddForceAtPosition(cue.transform.forward * cue.GetComponent<Cue>().force, 
             predictionBall.transform.position, ForceMode.Impulse);
         
         for (int i = 0; i < steps; i++)
@@ -118,13 +121,17 @@ public class ShotPrediction : MonoBehaviour
             markerPos[i] = predictionBall.transform.position;
         }
         Destroy(predictionBall);
+
+        UpdateBallsPositions();
     }
 
     private void UpdateBallsPositions()
     {
         for (int i = 0; i < 15; i++)
         {
-            ballsPredicted[i].transform.position = ballsPos[i].position;
+            ballsPredicted[i].SetActive(true);
+            ballsPredicted[i].transform.position = balls[i].transform.position;
+            ballsPredicted[i].GetComponent<SphereCollider>().isTrigger = false;
         }
     }
 
