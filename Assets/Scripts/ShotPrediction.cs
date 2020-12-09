@@ -31,6 +31,7 @@ public class ShotPrediction : MonoBehaviour
 
     public GameObject[] pockets;
     //private GameObject predictionCue;
+    //private GameObject marker;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,15 @@ public class ShotPrediction : MonoBehaviour
 
         //instantiate pockets
         SetupPockets();
+
+        /*//instantiate marker for testing new pos of transform forward in apply force
+        marker = Instantiate(cue);
+        marker.name = "cue_clone";
+        Destroy(marker.GetComponent<BoxCollider>());
+        marker.transform.position = cue.transform.position;
+        marker.transform.rotation = cue.transform.rotation;
+        SceneManager.MoveGameObjectToScene(marker, scenePrediction);
+        */
 
         markerPos = new Vector3[steps];
         redMaterial = new Material(Shader.Find("Diffuse"));
@@ -86,8 +96,10 @@ public class ShotPrediction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||
-            Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.R)) // || Input.GetMouseButton(0))
+        if(Input.GetKeyUp(KeyCode.A) || Input.GetKey(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKey(KeyCode.D) 
+            || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) 
+                || Input.GetKey(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftArrow) 
+                    || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.R))
         {
             //UpdateBallsPositions();
             GetMarkersPos();
@@ -111,6 +123,17 @@ public class ShotPrediction : MonoBehaviour
 
         //cue.transform.forward nie wplywa, wektor nie zmienia sie przyblizajac do bialej bili
         //-> cos innego jest przyczyna, co?
+        /*       
+        GameObject marker = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere));
+        marker.name = "siema";
+        Destroy(marker.GetComponent<SphereCollider>());
+        marker.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        
+        marker.transform.position = cue.transform.position;
+        marker.transform.rotation = cue.transform.rotation;
+        float step = cue.GetComponent<Cue>().speedCueStrike * 0.7f;
+        marker.transform.position = Vector3.Lerp(marker.transform.position, whiteBall.transform.position, step);
+        */
         predictionBall.GetComponent<Rigidbody>().AddForceAtPosition(cue.transform.forward * cue.GetComponent<Cue>().force, 
             predictionBall.transform.position, ForceMode.Impulse);
         
