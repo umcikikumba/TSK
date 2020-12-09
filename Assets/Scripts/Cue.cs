@@ -26,7 +26,7 @@ public class Cue : MonoBehaviour
     private float r2;
     public BoxCollider boxCollider;
     private GameObject[] balls;
-
+    private bool collidedWithBall;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +48,18 @@ public class Cue : MonoBehaviour
         r2 = 0.0f;
 
         balls = GameObject.FindGameObjectsWithTag("balls");
+        collidedWithBall = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("pos x: " + transform.position.x);
+        //Debug.Log("pos y: " + transform.position.y);
+        //Debug.Log("pos z: " + transform.position.z);
+        //Debug.Log("rot x: " + transform.rotation.x);
+        //Debug.Log("rot y: " + transform.rotation.y);
+        //Debug.Log("rot z: " + transform.rotation.z);
         //Debug.Log("cue transform forward: " + transform.forward);
         if (isShooting == false)
         {
@@ -100,7 +107,7 @@ public class Cue : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
-                Debug.Log(transform.rotation.y);
+                //Debug.Log(transform.rotation.y);
                 if (this.transform.rotation.y > l1 && this.transform.rotation.y < l2)
                 {
                     rotateStep = -5.0f * Time.deltaTime;
@@ -127,20 +134,26 @@ public class Cue : MonoBehaviour
 
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            boxCollider.isTrigger = false;
+            //zmienia sie nieznacznie rotacja -> dlaczego???
+            //boxCollider.isTrigger = false;
             float step = speedCueStrike * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, whiteBall.transform.position, step);
+            //transform.position = Vector3.MoveTowards(transform.position, whiteBall.transform.position, step);
+            transform.position = Vector3.Lerp(transform.position, whiteBall.transform.position, step);
             isShooting = true;
         }
 
-        if (whiteBall.velocity < 0.1f && (whiteBall.transform.hasChanged == true || whiteBall.collidedWithPocket == true))
+        if (collidedWithBall == true && whiteBall.velocity < 0.01f && whiteBall.reachedVel == true && 
+            (whiteBall.transform.hasChanged == true || whiteBall.collidedWithPocket == true))
         {
             isShooting = false;
             whiteBall.collidedWithPocket = false;
             whiteBall.transform.hasChanged = false;
-           // whiteBall.firstCollison = false;
+            //whiteBall.firstCollison = false;
             UpdateCuePosition();
             UpdateCueRotation();
+            collidedWithBall = false;
+            whiteBall.reachedVel = false;
+            boxCollider.isTrigger = false;
         }
 
 
@@ -169,6 +182,7 @@ public class Cue : MonoBehaviour
         {
             collision.gameObject.SendMessage("ApplyForce", this);
             boxCollider.isTrigger = true;
+            collidedWithBall = true;
         }
         if (collision.gameObject.tag == "balls")
         {
@@ -179,10 +193,9 @@ public class Cue : MonoBehaviour
     public void UpdateCuePosition()
     {
         //newpos
-        Vector3 newWhiteBallPos = new Vector3(whiteBall.transform.position.x + 2.0f, whiteBall.transform.position.y + 0.2f, whiteBall.transform.position.z);
+        Vector3 newWhiteBallPos = new Vector3(whiteBall.transform.position.x + 1.6f, whiteBall.transform.position.y + 0.2f, whiteBall.transform.position.z);
         this.transform.position = newWhiteBallPos;
         transform.Rotate(5.0f, 0.0f, 0.0f);
-
         whiteBall.firstCollison = false;
         //lookat
         this.transform.LookAt(whiteBall.transform);

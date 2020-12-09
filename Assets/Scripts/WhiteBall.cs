@@ -11,6 +11,7 @@ public class WhiteBall : MonoBehaviour
     public bool collidedWithPocket, firstCollison;
     public Cue cue;
     public bool clone = false;
+    public bool reachedVel = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,9 @@ public class WhiteBall : MonoBehaviour
     void Update()
     {
         velocity = rb.velocity.magnitude;
+
+        if (rb.velocity.magnitude > 1.0f)
+            reachedVel = true;
     }
 
 
