@@ -12,6 +12,7 @@ public class WhiteBall : MonoBehaviour
     public Cue cue;
     public bool clone = false;
     public bool reachedVel = false;
+    public GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -67,18 +68,22 @@ public class WhiteBall : MonoBehaviour
                     firstCollison = true;
                 }
             }
+            if(collision.gameObject.name == "9")
+            {
+                Debug.Log("uderzyles w 9 bile");
 
+            }
         }
     }
-    
 
+    
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Pocket"))
         {
             if(clone == false)
             {
-                Debug.Log("White ball has entered the pocket.");
+                //Debug.Log("White ball has entered the pocket.");
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 collidedWithPocket = true;
@@ -87,7 +92,7 @@ public class WhiteBall : MonoBehaviour
             else if (clone == true)
             {
                 //stop drawing motherfucker
-                Debug.Log("Clone ball has entered the pocket.");
+                //Debug.Log("Clone ball has entered the pocket.");
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 collidedWithPocket = true;

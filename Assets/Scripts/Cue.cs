@@ -27,6 +27,7 @@ public class Cue : MonoBehaviour
     public BoxCollider boxCollider;
     private GameObject[] balls;
     private bool collidedWithBall;
+    public GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -183,6 +184,7 @@ public class Cue : MonoBehaviour
             collision.gameObject.SendMessage("ApplyForce", this);
             boxCollider.isTrigger = true;
             collidedWithBall = true;
+            gameController.ballInPocket = false;
         }
         if (collision.gameObject.tag == "balls")
         {
@@ -199,6 +201,7 @@ public class Cue : MonoBehaviour
         whiteBall.firstCollison = false;
         //lookat
         this.transform.LookAt(whiteBall.transform);
+        gameController.NextPlayer();
     }
 
     public void UpdateCueRotation()

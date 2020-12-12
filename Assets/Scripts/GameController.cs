@@ -8,10 +8,13 @@ public class GameController : MonoBehaviour
     public GameObject cue;
     public GameObject cueBall;
     public GameObject Balls;
+    public GameObject[] fulls;
+    public GameObject[] halfs;
 
     public Player CurrentPlayer;
     public Player OtherPlayer;
-    private bool currentPlayerContinuesToPlay = false;
+    public bool currentPlayerContinuesToPlay = false;
+    public bool ballInPocket = false;
 	public Text text;
 
 
@@ -19,28 +22,31 @@ public class GameController : MonoBehaviour
     {
         CurrentPlayer = new Player("Piotrek");
         OtherPlayer = new Player("Paweł");
-               
+        text.text = "Now Playing " + CurrentPlayer.Name;
     }
 
-    private void Update()
+    public void updatePlayer()
     {
-		text.text = "Now Playing " +  CurrentPlayer.Name;
+        if (ballInPocket)
+        {
+            currentPlayerContinuesToPlay = true;
+        }
     }
 
-
-	public void NextPlayer()
+    public void NextPlayer()
 	{
-		if (currentPlayerContinuesToPlay)
-		{
-			currentPlayerContinuesToPlay = false;
-			Debug.Log(CurrentPlayer.Name + " continues to play");
-			return;
-		}
+        updatePlayer();
+        if (currentPlayerContinuesToPlay)
+        {
+            currentPlayerContinuesToPlay = false;
+            return;
+        }
 
-		Debug.Log(OtherPlayer.Name + " will play");
-		var aux = CurrentPlayer;
-		CurrentPlayer = OtherPlayer;
-		OtherPlayer = aux;
-	}
+        var aux = CurrentPlayer;
+        CurrentPlayer = OtherPlayer;
+        OtherPlayer = aux;
+        text.text = "Now Playing " + CurrentPlayer.Name;
 
+    }
+      
 }

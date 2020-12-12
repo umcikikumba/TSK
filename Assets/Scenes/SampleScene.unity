@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 29114451}
+  gameController: {fileID: 915620870}
 --- !u!54 &29114454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -703,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.019
+      value: -1.429
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -913,6 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 227305336}
+  gameController: {fileID: 915620870}
 --- !u!54 &227305339
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -977,6 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 229814176}
+  gameController: {fileID: 915620870}
 --- !u!54 &229814179
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1131,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.109
+      value: -1.5189999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1230,7 +1233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8449999
+      value: -1.2549999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1682,6 +1685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 403565447}
+  gameController: {fileID: 915620870}
 --- !u!114 &403565449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,6 +1699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
+  gameController: {fileID: 0}
 --- !u!54 &403565450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2022,6 +2027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 588591901}
+  gameController: {fileID: 915620870}
 --- !u!54 &588591904
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2086,6 +2092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 589508963}
+  gameController: {fileID: 915620870}
 --- !u!54 &589508966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2150,6 +2157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 616533809}
+  gameController: {fileID: 915620870}
 --- !u!54 &616533812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2214,6 +2222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 617243289}
+  gameController: {fileID: 915620870}
 --- !u!54 &617243292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2449,7 +2458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9354
+      value: -1.3454
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2655,6 +2664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 734458357}
+  gameController: {fileID: 915620870}
 --- !u!54 &734458360
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2838,6 +2848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 740647766}
+  gameController: {fileID: 915620870}
 --- !u!54 &740647769
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2904,7 +2915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.02
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3003,7 +3014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8449999
+      value: -1.2549999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3519,8 +3530,26 @@ MonoBehaviour:
   cue: {fileID: 1750777607}
   cueBall: {fileID: 1043230227}
   Balls: {fileID: 904647324}
+  fulls:
+  - {fileID: 403565447}
+  - {fileID: 1606039277}
+  - {fileID: 589508963}
+  - {fileID: 229814176}
+  - {fileID: 734458357}
+  - {fileID: 1319119335}
+  - {fileID: 29114451}
+  halfs:
+  - {fileID: 617243289}
+  - {fileID: 227305336}
+  - {fileID: 1307015054}
+  - {fileID: 1906772850}
+  - {fileID: 588591901}
+  - {fileID: 1672808204}
+  - {fileID: 740647766}
   CurrentPlayer: {fileID: 0}
   OtherPlayer: {fileID: 0}
+  currentPlayerContinuesToPlay: 0
+  ballInPocket: 0
   text: {fileID: 1274712794}
 --- !u!4 &915620871
 Transform:
@@ -3863,7 +3892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.933
+      value: -1.3429999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4039,7 +4068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1081
+      value: -1.5180999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4370,7 +4399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0219
+      value: -1.4318999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5258,6 +5287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1319119335}
+  gameController: {fileID: 915620870}
 --- !u!54 &1319119338
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5566,7 +5596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9324
+      value: -1.3424
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5669,7 +5699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.021
+      value: -1.4309999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6381,7 +6411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.757
+      value: -1.1669999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6478,6 +6508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1606039277}
+  gameController: {fileID: 915620870}
 --- !u!54 &1606039280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6706,6 +6737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1672808204}
+  gameController: {fileID: 915620870}
 --- !u!54 &1672808207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6772,7 +6804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.109
+      value: -1.5189999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6954,7 +6986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1086001
+      value: -1.5186001
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7380,6 +7412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1906772850}
+  gameController: {fileID: 915620870}
 --- !u!54 &1906772853
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8064,6 +8097,11 @@ PrefabInstance:
       propertyPath: shotPrediction
       value: 
       objectReference: {fileID: 918442464}
+    - target: {fileID: 523452029205727647, guid: a747b50ff9400ea4cb1b991354518c50,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 915620870}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a747b50ff9400ea4cb1b991354518c50, type: 3}
 --- !u!1001 &3321135313312929576
@@ -8088,6 +8126,11 @@ PrefabInstance:
       propertyPath: dynamic_friction
       value: 
       objectReference: {fileID: 106951169}
+    - target: {fileID: 3321135313746935550, guid: 9ee183da552f04d47be78c754bfa3c1d,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 915620870}
     - target: {fileID: 3321135314315001446, guid: 9ee183da552f04d47be78c754bfa3c1d,
         type: 3}
       propertyPath: m_Enabled
@@ -8121,7 +8164,7 @@ PrefabInstance:
     - target: {fileID: 3321135314317425798, guid: 9ee183da552f04d47be78c754bfa3c1d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1079998
+      value: -1.5179998
       objectReference: {fileID: 0}
     - target: {fileID: 3321135314317425798, guid: 9ee183da552f04d47be78c754bfa3c1d,
         type: 3}
@@ -8282,5 +8325,10 @@ PrefabInstance:
       propertyPath: boxCollider
       value: 
       objectReference: {fileID: 79821023}
+    - target: {fileID: 6442876014677253445, guid: 66e3dbf7cb8f63b4ab028d0466d30bbb,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 915620870}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e3dbf7cb8f63b4ab028d0466d30bbb, type: 3}
