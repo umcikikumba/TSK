@@ -7,8 +7,8 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BilliardsTableBands
-  dynamicFriction: 0.057142638
+  dynamicFriction: 0.04999978
   staticFriction: 0.19999994
-  bounciness: 0.8285723
+  bounciness: 0.98571515
   frictionCombine: 0
   bounceCombine: 0

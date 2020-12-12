@@ -1,38 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public GameObject cue;
     public GameObject cueBall;
     public GameObject Balls;
-    public GameObject scoreBar;
-    public GameObject winnerMessage;
 
     public Player CurrentPlayer;
     public Player OtherPlayer;
     private bool currentPlayerContinuesToPlay = false;
+	public Text text;
 
-    static public GameController GameInstance
-    {
-        get;
-        private set;
-    }
 
     void Start()
     {
         CurrentPlayer = new Player("Piotrek");
         OtherPlayer = new Player("Paweł");
-
-        GameInstance = this;
                
     }
-	public void BallPocketed(int ballNumber)
-	{
-		currentPlayerContinuesToPlay = true;
-		CurrentPlayer.Collect(ballNumber);
-	}
+
+    private void Update()
+    {
+		text.text = "Now Playing " +  CurrentPlayer.Name;
+    }
+
 
 	public void NextPlayer()
 	{
@@ -49,23 +43,4 @@ public class GameController : MonoBehaviour
 		OtherPlayer = aux;
 	}
 
-	public void EndMatch()
-	{
-		Player winner = null;
-		if (CurrentPlayer.Points > OtherPlayer.Points)
-			winner = CurrentPlayer;
-		else if (CurrentPlayer.Points < OtherPlayer.Points)
-			winner = OtherPlayer;
-
-		var msg = "Game Over\n";
-
-		if (winner != null)
-			msg += string.Format("The winner is '{0}'", winner.Name);
-		else
-			msg += "It was a draw!";
-
-		var text = winnerMessage.GetComponentInChildren<UnityEngine.UI.Text>();
-		text.text = msg;
-		winnerMessage.GetComponent<Canvas>().enabled = true;
-	}
 }
