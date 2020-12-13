@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     public Text reset;
     public Text gameOver;
     public Text winning;
+    public Text currentBall;
 
     static public GameController GameInstance
     {
@@ -37,22 +38,28 @@ public class GameController : MonoBehaviour
     void Start()
     {
         GameInstance = this;
-        Player1 = new Player("Piotrek");
-        Player2 = new Player("Paweł");
+        Player1 = new Player("Player 1");
+        Player2 = new Player("Player 2");
         currentPlayer = Player1;
         otherPlayer = Player2;
-        text.text = "Now Playing " + currentPlayer.Name;
-        
+        text.text = "Now playing " + currentPlayer.Name;
+        CurrentBall();
+        firstBallPotted = false;
     }
+
     private void Update()
     {
-        text.text = "Now Playing " + currentPlayer.Name;
+        text.text = "Now playing " + currentPlayer.Name;
+        CurrentBall();
         if (faul)
         {
             if (Input.GetKey(KeyCode.Y))
             {
                 whiteBall.transform.position = whiteBall.GetComponent<Balls>().startPos;
+                whiteBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                whiteBall.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 cue.transform.position = cue.GetComponent<Cue>().startPos;
+                cue.transform.rotation = cue.GetComponent<Cue>().startRot;
                 reset.gameObject.SetActive(false);
                 faul = false;
             }
@@ -69,8 +76,11 @@ public class GameController : MonoBehaviour
             {
                 
                 whiteBall.transform.position = whiteBall.GetComponent<Balls>().startPos;
+                whiteBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                whiteBall.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 cue.transform.position = cue.GetComponent<Cue>().startPos;
-                foreach(GameObject it in Balls)
+                cue.transform.rotation = cue.GetComponent<Cue>().startRot;
+                foreach (GameObject it in Balls)
                 {
                     it.gameObject.SetActive(true);
                     it.GetComponent<SphereCollider>().isTrigger = false;
@@ -90,7 +100,10 @@ public class GameController : MonoBehaviour
             {
 
                 whiteBall.transform.position = whiteBall.GetComponent<Balls>().startPos;
+                whiteBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                whiteBall.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 cue.transform.position = cue.GetComponent<Cue>().startPos;
+                cue.transform.rotation = cue.GetComponent<Cue>().startRot;
                 foreach (GameObject it in Balls)
                 {
                     it.gameObject.SetActive(true);
@@ -150,14 +163,59 @@ public class GameController : MonoBehaviour
     public void Lose()
     {
         game_over = true;
-
+        faul = false;
+        reset.gameObject.SetActive(false);
     }
+
     public void Win()
     {
         winning.gameObject.transform.position = gameOver.gameObject.transform.position;
         winning.gameObject.transform.localScale = gameOver.gameObject.transform.localScale;
         winning.text = currentPlayer.Name + " Wins!!! \nPress ESC to restart";
         win = true;
+    }
+
+    public void CurrentBall()
+    {
+        if(currentPlayer.currentPlayerHasFull == true)
+        {
+            int x = 0;
+            for (int i = 0; i < 7; i++)
+            {
+                if (fulls[i].activeSelf == true)
+                {
+                    x = 1;
+                }
+            }
+            if (x == 1)
+            {
+                currentBall.text = "Strike solid coloured balls 1-7";
+            }
+            else
+            {
+                currentBall.text = "Strike black ball 8";
+            }
+        }
+
+        if(currentPlayer.currentPlayerHasHalf == true)
+        {
+            int x = 0;
+            for (int i = 0; i < 7; i++)
+            {
+                if (fulls[i].activeSelf == true)
+                {
+                    x = 1;
+                }
+            }
+            if (x == 1)
+            {
+                currentBall.text = "Strike striped balls 9 - 15";
+            }
+            else
+            {
+                currentBall.text = "Strike black ball 8";
+            }
+        }
     }
 
 
