@@ -24,7 +24,6 @@ public class GameController : MonoBehaviour
     public bool goodBall = false;
     public bool game_over = false;
     public bool win = false;
-    public int counter = 0;
     public Text text;
     public Text reset;
     public Text gameOver;
@@ -48,7 +47,6 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         text.text = "Now Playing " + currentPlayer.Name;
-        Debug.Log(counter);
         if (faul)
         {
             if (Input.GetKey(KeyCode.Y))

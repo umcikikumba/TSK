@@ -360,6 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39637155}
   - component: {fileID: 39637156}
+  - component: {fileID: 39637157}
   m_Layer: 5
   m_Name: Power
   m_TagString: Untagged
@@ -452,6 +453,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 39637157}
+        m_MethodName: ChangeValue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 39637156}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &39637157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39637154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd6317d7dc3ef641afd03eb7eebfa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 39637154}
+  bounciness: 0
+  staticFriction: 0
+  dynamicFriction: 0
+  power: 1
+  cue: {fileID: 2016597025}
+  changedValue: 0
 --- !u!1 &44641832
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +714,9 @@ MonoBehaviour:
   bounciness: 0
   staticFriction: 0
   dynamicFriction: 1
+  power: 0
+  cue: {fileID: 2016597025}
+  changedValue: 0
 --- !u!1001 &108443565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1620,6 +1654,9 @@ MonoBehaviour:
   bounciness: 1
   staticFriction: 0
   dynamicFriction: 0
+  power: 0
+  cue: {fileID: 2016597025}
+  changedValue: 0
 --- !u!1 &387662284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,6 +3020,9 @@ MonoBehaviour:
   bounciness: 0
   staticFriction: 0
   dynamicFriction: 1
+  power: 0
+  cue: {fileID: 2016597025}
+  changedValue: 0
 --- !u!1 &740647766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cdac80e1dd15a450f93408e7aa5be2f7,
@@ -3601,6 +3641,9 @@ MonoBehaviour:
   bounciness: 1
   staticFriction: 0
   dynamicFriction: 0
+  power: 0
+  cue: {fileID: 2016597025}
+  changedValue: 0
 --- !u!4 &894354271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6442876013553961531, guid: 66e3dbf7cb8f63b4ab028d0466d30bbb,
@@ -3727,7 +3770,6 @@ MonoBehaviour:
   goodBall: 0
   game_over: 0
   win: 0
-  counter: 0
   text: {fileID: 1274712794}
   reset: {fileID: 1440658043}
   gameOver: {fileID: 615768280}
@@ -3803,6 +3845,7 @@ MonoBehaviour:
   - {fileID: 279462940}
   - {fileID: 496940344}
   - {fileID: 2094166140}
+  powerSlider: {fileID: 39637156}
 --- !u!4 &918442465
 Transform:
   m_ObjectHideFlags: 0
@@ -4523,6 +4566,9 @@ MonoBehaviour:
   bounciness: 0
   staticFriction: 1
   dynamicFriction: 0
+  power: 0
+  cue: {fileID: 2016597025}
+  changedValue: 0
 --- !u!1 &1033926033
 GameObject:
   m_ObjectHideFlags: 0
@@ -5636,6 +5682,9 @@ MonoBehaviour:
   bounciness: 0
   staticFriction: 1
   dynamicFriction: 0
+  power: 0
+  cue: {fileID: 2016597025}
+  changedValue: 0
 --- !u!4 &1379919245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 523452028485256592, guid: a747b50ff9400ea4cb1b991354518c50,

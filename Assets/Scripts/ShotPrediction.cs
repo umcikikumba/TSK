@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShotPrediction : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class ShotPrediction : MonoBehaviour
     private LineRenderer lineRenderer;
 
     public GameObject[] pockets;
+    public Slider powerSlider;
+
     void Start()
     {
 
@@ -78,13 +81,15 @@ public class ShotPrediction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.A) || Input.GetKey(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKey(KeyCode.D) 
-            || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) 
-                || Input.GetKey(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftArrow) 
-                    || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKey(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKey(KeyCode.D)
+            || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow)
+                || Input.GetKey(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftArrow)
+                    || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.R)
+                        || powerSlider.GetComponent<UIsetSliderValue>().changedValue == true)
         {
             GetMarkersPos();
             DrawLine();
+            powerSlider.GetComponent<UIsetSliderValue>().changedValue = false;
         }
 
     }

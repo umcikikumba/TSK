@@ -189,7 +189,6 @@ public class Cue : MonoBehaviour
         //lookat
         this.transform.LookAt(whiteBall.transform);
         gameController.NextPlayer();
-        gameController.counter = 0;
         gameController.goodBall = false;
     }
 

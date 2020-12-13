@@ -10,6 +10,9 @@ public class UIsetSliderValue : MonoBehaviour
     public bool bounciness;
     public bool staticFriction;
     public bool dynamicFriction;
+    public bool power;
+    public Cue cue;
+    public bool changedValue;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +30,22 @@ public class UIsetSliderValue : MonoBehaviour
         {
             slider.value = gameObject.GetComponent<Collider>().sharedMaterial.dynamicFriction;
         }
+        else if (power == true)
+        {
+            slider.value = cue.force;
+        }
+
+        changedValue = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ChangeValue(Slider slider)
+    {
+        changedValue = true;
     }
 }
