@@ -165,6 +165,13 @@ public class GameController : MonoBehaviour
         game_over = true;
         faul = false;
         reset.gameObject.SetActive(false);
+        firstBallPotted = false;
+        ballInPocket = false;
+        currentPlayerContinuesToPlay = false;
+        Player1.currentPlayerHasFull = false;
+        Player1.currentPlayerHasHalf = false;
+        Player2.currentPlayerHasFull = false;
+        Player2.currentPlayerHasHalf = false;
     }
 
     public void Win()
@@ -173,6 +180,13 @@ public class GameController : MonoBehaviour
         winning.gameObject.transform.localScale = gameOver.gameObject.transform.localScale;
         winning.text = currentPlayer.Name + " Wins!!! \nPress ESC to restart";
         win = true;
+        firstBallPotted = false;
+        ballInPocket = false;
+        currentPlayerContinuesToPlay = false;
+        Player1.currentPlayerHasFull = false;
+        Player1.currentPlayerHasHalf = false;
+        Player2.currentPlayerHasFull = false;
+        Player2.currentPlayerHasHalf = false;
     }
 
     public void CurrentBall()
