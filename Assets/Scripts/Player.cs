@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	private IList<int> ballsCollected = new List<int>();
+	public bool currentPlayerHasFull = false;
+	public bool currentPlayerHasHalf = false;
 
 	public Player(string name)
 	{
@@ -17,14 +18,5 @@ public class Player : MonoBehaviour
 		private set;
 	}
 
-	public int Points
-	{
-		get { return ballsCollected.Count; }
-	}
-
-	public void Collect(int ballNumber)
-	{
-		Debug.Log(Name + " collected ball " + ballNumber);
-		ballsCollected.Add(ballNumber);
-	}
+	
 }

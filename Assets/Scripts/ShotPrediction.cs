@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ShotPrediction : MonoBehaviour
 {
-    //TODO:
-    //-> ogarniecie poprawnej sily aplikowanej do symulowanej bialej bili,
-    //   cue.transform.forward musi byc dla kija blisko bili prawdopodobnie,
-    //   jednoczesnie musi to byc z bomby a nie po wcisnieciu LPM
-
     private Scene sceneMain;
     private Scene scenePrediction;
     private PhysicsScene sceneMainPhysics;
@@ -30,13 +25,9 @@ public class ShotPrediction : MonoBehaviour
     private LineRenderer lineRenderer;
 
     public GameObject[] pockets;
-    //private GameObject predictionCue;
-    //private GameObject marker;
-
-    // Start is called before the first frame update
     void Start()
     {
-        //manual simulation
+
         Physics.autoSimulation = false;
         //get main scene
         sceneMain = SceneManager.GetActiveScene();
@@ -54,15 +45,6 @@ public class ShotPrediction : MonoBehaviour
 
         //instantiate pockets
         SetupPockets();
-
-        /*//instantiate marker for testing new pos of transform forward in apply force
-        marker = Instantiate(cue);
-        marker.name = "cue_clone";
-        Destroy(marker.GetComponent<BoxCollider>());
-        marker.transform.position = cue.transform.position;
-        marker.transform.rotation = cue.transform.rotation;
-        SceneManager.MoveGameObjectToScene(marker, scenePrediction);
-        */
 
         markerPos = new Vector3[steps];
         redMaterial = new Material(Shader.Find("Diffuse"));
@@ -101,12 +83,10 @@ public class ShotPrediction : MonoBehaviour
                 || Input.GetKey(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftArrow) 
                     || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.R))
         {
-            //UpdateBallsPositions();
             GetMarkersPos();
             DrawLine();
         }
-        //DrawLine();
-        //UpdateBallsPositions();
+
     }
 
     private void GetMarkersPos()
@@ -121,21 +101,8 @@ public class ShotPrediction : MonoBehaviour
         SceneManager.MoveGameObjectToScene(predictionBall, scenePrediction);
         predictionBall.transform.position = whiteBall.transform.position;
 
-        //cue.transform.forward nie wplywa, wektor nie zmienia sie przyblizajac do bialej bili
-        //-> cos innego jest przyczyna, co?
-        /*       
-        GameObject marker = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere));
-        marker.name = "siema";
-        Destroy(marker.GetComponent<SphereCollider>());
-        marker.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        
-        marker.transform.position = cue.transform.position;
-        marker.transform.rotation = cue.transform.rotation;
-        float step = cue.GetComponent<Cue>().speedCueStrike * 0.7f;
-        marker.transform.position = Vector3.Lerp(marker.transform.position, whiteBall.transform.position, step);
-        */
         predictionBall.GetComponent<Rigidbody>().AddForceAtPosition(cue.transform.forward * cue.GetComponent<Cue>().force, 
-            predictionBall.transform.position, ForceMode.Impulse);
+        predictionBall.transform.position, ForceMode.Impulse);
         
         for (int i = 0; i < steps; i++)
         {

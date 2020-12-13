@@ -35,18 +35,6 @@ public class WhiteBall : MonoBehaviour
 
     void ApplyForce (Cue cue)
     {
-        // Gets a vector that points from the player's position to the target's.
-        //var heading = this.transform.position - cue.transform.position;
-        //var distance = heading.magnitude;
-        //var direction = heading / distance; // This is now the normalized direction.
-
-
-        //rb.AddTorque(Vector3.forward * cue.force * 10);
-        //rb.velocity.Set(cue.force / rb.mass, cue.force / rb.mass, cue.force / rb.mass);
-        //rb.AddForceAtPosition(cue.transform.forward * cue.force,this.transform.position, ForceMode.Impulse);
-        //rb.AddForceAtPosition(cue.transform.forward * cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
-        //rb.AddForceAtPosition(cue.transform.forward *  cue.force, new Vector3(10.0f, 0.0f, 0.0f), ForceMode.Impulse);
-
         rb.AddForce(cue.transform.forward * cue.force, ForceMode.Impulse);
     }
 
@@ -68,11 +56,47 @@ public class WhiteBall : MonoBehaviour
                     firstCollison = true;
                 }
             }
-            if(collision.gameObject.name == "9")
+            if (gameController.currentPlayer.currentPlayerHasHalf)
             {
-                Debug.Log("uderzyles w 9 bile");
+                if(collision.gameObject.name == "1" || collision.gameObject.name == "2" || collision.gameObject.name == "3" || collision.gameObject.name == "4" || collision.gameObject.name == "5" || collision.gameObject.name == "6" || collision.gameObject.name == "7")
+                {
 
+                    gameController.faulWithReset();
+                    Debug.Log("faul");
+                }
+                if (collision.gameObject.name == "8")
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        if (gameController.halfs[i].activeSelf == true)
+                        {
+                            gameController.faulWithReset();
+
+                        }
+                    }
+                }
             }
+            if (gameController.currentPlayer.currentPlayerHasFull)
+            {
+                if (collision.gameObject.name == "9" || collision.gameObject.name == "10" || collision.gameObject.name == "11" || collision.gameObject.name == "12" || collision.gameObject.name == "13" || collision.gameObject.name == "14" || collision.gameObject.name == "15")
+                {
+
+                    gameController.faulWithReset();
+                    Debug.Log("faul");
+                }
+                if(collision.gameObject.name == "8")
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        if (gameController.fulls[i].activeSelf == true)
+                        {
+                            gameController.faulWithReset();
+                           
+                        }
+                    }
+                }
+            }
+            
         }
     }
 
@@ -83,7 +107,7 @@ public class WhiteBall : MonoBehaviour
         {
             if(clone == false)
             {
-                //Debug.Log("White ball has entered the pocket.");
+                
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 collidedWithPocket = true;
@@ -91,15 +115,14 @@ public class WhiteBall : MonoBehaviour
             }
             else if (clone == true)
             {
-                //stop drawing motherfucker
-                //Debug.Log("Clone ball has entered the pocket.");
+
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 collidedWithPocket = true;
                 Vector3 newStartPos = startPosition;
                 newStartPos.y -= 1.0f;
                 this.transform.position = newStartPos;
-                //this.transform.position = startPosition;
+
             }
         }
     }

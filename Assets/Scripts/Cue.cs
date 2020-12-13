@@ -32,7 +32,6 @@ public class Cue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //startPosition = this.transform;
         isShooting = false;
         reverse = false;
         front = false;
@@ -55,17 +54,8 @@ public class Cue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("pos x: " + transform.position.x);
-        //Debug.Log("pos y: " + transform.position.y);
-        //Debug.Log("pos z: " + transform.position.z);
-        //Debug.Log("rot x: " + transform.rotation.x);
-        //Debug.Log("rot y: " + transform.rotation.y);
-        //Debug.Log("rot z: " + transform.rotation.z);
-        //Debug.Log("cue transform forward: " + transform.forward);
         if (isShooting == false)
         {
-            //Debug.Log("rot x: " + this.transform.rotation.x);
-            //Debug.Log("rot y: " + this.transform.rotation.y);
             Vector3 targetPos = new Vector3(whiteBall.transform.position.x, whiteBall.transform.position.y + 0.2f, whiteBall.transform.position.z);
             if (Input.GetKey(KeyCode.A))
             {
@@ -108,7 +98,6 @@ public class Cue : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
-                //Debug.Log(transform.rotation.y);
                 if (this.transform.rotation.y > l1 && this.transform.rotation.y < l2)
                 {
                     rotateStep = -5.0f * Time.deltaTime;
@@ -135,10 +124,8 @@ public class Cue : MonoBehaviour
 
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            //zmienia sie nieznacznie rotacja -> dlaczego???
-            //boxCollider.isTrigger = false;
+            
             float step = speedCueStrike * Time.deltaTime;
-            //transform.position = Vector3.MoveTowards(transform.position, whiteBall.transform.position, step);
             transform.position = Vector3.Lerp(transform.position, whiteBall.transform.position, step);
             isShooting = true;
         }
@@ -202,6 +189,8 @@ public class Cue : MonoBehaviour
         //lookat
         this.transform.LookAt(whiteBall.transform);
         gameController.NextPlayer();
+        gameController.counter = 0;
+        gameController.goodBall = false;
     }
 
     public void UpdateCueRotation()
