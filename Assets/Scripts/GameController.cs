@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     public bool firstBallPotted = false;
     public bool faul = false;
     public bool goodBall = false;
+    public bool goodTouch = false;
     public bool game_over = false;
     public bool win = false;
     public Text text;
@@ -156,7 +157,6 @@ public class GameController : MonoBehaviour
     {
         faul = true;
         currentPlayerContinuesToPlay = false;
-        NextPlayer();
         reset.gameObject.SetActive(true);
     }
 

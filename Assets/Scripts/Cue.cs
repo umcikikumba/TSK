@@ -190,6 +190,7 @@ public class Cue : MonoBehaviour
         this.transform.LookAt(whiteBall.transform);
         gameController.NextPlayer();
         gameController.goodBall = false;
+        gameController.goodTouch = false;
     }
 
     public void UpdateCueRotation()

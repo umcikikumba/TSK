@@ -58,45 +58,61 @@ public class WhiteBall : MonoBehaviour
             }
             if (gameController.currentPlayer.currentPlayerHasHalf)
             {
-                if(collision.gameObject.name == "1" || collision.gameObject.name == "2" || collision.gameObject.name == "3" || collision.gameObject.name == "4" || collision.gameObject.name == "5" || collision.gameObject.name == "6" || collision.gameObject.name == "7")
+                if (collision.gameObject.name == "1" || collision.gameObject.name == "2" || collision.gameObject.name == "3" || collision.gameObject.name == "4" || collision.gameObject.name == "5" || collision.gameObject.name == "6" || collision.gameObject.name == "7")
                 {
-
-                    gameController.faulWithReset();
-                    Debug.Log("faul");
+                    gameController.goodTouch = true;
+                }
+                if (collision.gameObject.name == "1" || collision.gameObject.name == "2" || collision.gameObject.name == "3" || collision.gameObject.name == "4" || collision.gameObject.name == "5" || collision.gameObject.name == "6" || collision.gameObject.name == "7")
+                {
+                    if (!gameController.goodTouch)
+                    {
+                        gameController.faulWithReset();
+                        Debug.Log("faul");
+                    } 
                 }
                 if (collision.gameObject.name == "8")
                 {
-                    for (int i = 0; i < 7; i++)
+                    if (!gameController.goodTouch)
                     {
-                        if (gameController.halfs[i].activeSelf == true)
+                        for (int i = 0; i < 7; i++)
                         {
-                            gameController.faulWithReset();
-
+                            if (gameController.halfs[i].activeSelf == true)
+                            {
+                                gameController.faulWithReset();
+                            }
                         }
                     }
                 }
             }
             if (gameController.currentPlayer.currentPlayerHasFull)
             {
+                if (collision.gameObject.name == "1" || collision.gameObject.name == "2" || collision.gameObject.name == "3" || collision.gameObject.name == "4" || collision.gameObject.name == "5" || collision.gameObject.name == "6" || collision.gameObject.name == "7")
+                {
+                    gameController.goodTouch = true;
+                }
                 if (collision.gameObject.name == "9" || collision.gameObject.name == "10" || collision.gameObject.name == "11" || collision.gameObject.name == "12" || collision.gameObject.name == "13" || collision.gameObject.name == "14" || collision.gameObject.name == "15")
                 {
-
-                    gameController.faulWithReset();
-                    Debug.Log("faul");
+                    if (!gameController.goodTouch)
+                    {
+                        gameController.faulWithReset();
+                        Debug.Log("faul");
+                    }
                 }
                 if(collision.gameObject.name == "8")
                 {
-                    for (int i = 0; i < 7; i++)
+                    if (!gameController.goodTouch)
                     {
-                        if (gameController.fulls[i].activeSelf == true)
+                        for (int i = 0; i < 7; i++)
                         {
-                            gameController.faulWithReset();
-                           
+                            if (gameController.fulls[i].activeSelf == true)
+                            {
+                                gameController.faulWithReset();
+
+                            }
                         }
                     }
                 }
             }
-            
         }
     }
 
